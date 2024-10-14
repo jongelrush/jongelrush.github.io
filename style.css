@@ -14,3 +14,7 @@ section {
 footer {
   background-color: #7abf5a;
 }
+.about {
+  width: 100%;
+  height: auto;
+}
