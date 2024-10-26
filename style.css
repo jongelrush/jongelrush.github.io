@@ -2,9 +2,6 @@
   padding-top: 6rem;
   background-color: #bac8d9;
 }
-#project {
-  background-color: #bac8d9;
-}
 section {
   padding-top: 5rem;
 }
@@ -17,4 +14,104 @@ footer {
 .about {
   width: 100%;
   height: auto;
+}
+.container img:hover {
+  transition: all ease-in-out 0.5s;
+}
+
+.card {
+  background-color: #7abf5a;
+  width: 350px;
+  height: 350px;
+}
+
+/* my project section */
+.container my-project {
+  background-color: #bac8d9;
+}
+.project-box {
+  position: relative;
+  background-color: #7abf5a;
+  border-radius: 10px;
+  height: 500px;
+  transform-style: preserve-3d;
+}
+
+.project-box::before {
+  content: "MY";
+  position: absolute;
+  color: #fff;
+  font-size: 6em;
+  font-weight: bold;
+  font-style: italic;
+  top: 30px;
+  left: 50%;
+  transform: translate(-50%, 0);
+  opacity: 0;
+  transition: 0.5s;
+}
+
+.project-box:hover::before {
+  opacity: 0.2;
+}
+
+.project-box::after {
+  content: "PROJECT";
+  position: absolute;
+  color: #fff;
+  font-size: 4em;
+  font-weight: bold;
+  font-style: italic;
+  top: 350px;
+  opacity: 0;
+  left: 50%;
+  transform: translate(-50%, 0);
+  transition: 0.5s;
+}
+
+.project-box:hover::after {
+  opacity: 0.2;
+}
+
+.project-name {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  color: #fff;
+  text-align: center;
+  font-size: 2em;
+  opacity: 0;
+  transition: 0.5s;
+  transform: translate3d(0, 0, 50px);
+}
+
+.project-box:hover .project-name {
+  top: 20px;
+  opacity: 1;
+}
+
+.project-detail-button {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translate3d(-50%, 0, 100px);
+  opacity: 0;
+  transition: 0.5s;
+  z-index: 3;
+}
+
+.project-box:hover .project-detail-button {
+  opacity: 1;
+  bottom: 20px;
+}
+.project-img {
+  position: absolute;
+  top: 52%;
+  left: 50%;
+  transform: translate3d(-50%, -52%, 80px);
+  max-width: 350px;
+  z-index: 10;
+}
+.project-box:hover .project-img {
+  transform: translate3d(-50%, -52%, 100px) rotate(-2deg) scale(1.2);
 }
