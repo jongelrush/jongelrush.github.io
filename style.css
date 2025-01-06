@@ -115,3 +115,82 @@ footer {
 .project-box:hover .project-img {
   transform: translate3d(-50%, -52%, 100px) rotate(-2deg) scale(1.2);
 }
+
+/* Kontainer Peta */
+.map-container {
+  width: 100%; /* Sesuaikan dengan ukuran halaman */
+  max-width: 500px; /* Batas maksimum lebar */
+  height: 250px; /* Tinggi peta */
+  margin: 0 auto; /* Tengah halaman */
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); /* Tambahkan bayangan */
+  border-radius: 10px; /* Ujung melengkung */
+  overflow: hidden; /* Sembunyikan bagian iframe yang keluar */
+}
+
+/* Iframe Peta */
+.map-container iframe {
+  width: 100%; /* Iframe menyesuaikan kontainer */
+  height: 100%; /* Iframe menyesuaikan kontainer */
+  border: none; /* Hilangkan border */
+}
+
+/* Gaya untuk dropdown */
+#kategoriFilter {
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  font-size: 16px;
+  background-color: #f9f9f9;
+  color: #333;
+  cursor: pointer;
+  margin-bottom: 20px;
+  transition: all 0.3s ease;
+}
+
+#kategoriFilter:hover {
+  border-color: #007bff;
+  background-color: #e9ecef;
+  color: #007bff;
+}
+
+/* Container untuk karya */
+.karya-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+
+/* Gaya untuk item karya */
+.karya-item {
+  width: 300px;
+  padding: 15px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background-color: #fff;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.karya-item:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Gaya untuk judul karya */
+.karya-item h3 {
+  font-size: 20px;
+  color: #007bff;
+  margin-bottom: 10px;
+}
+
+.karya-item p {
+  font-size: 14px;
+  color: #555;
+  line-height: 1.5;
+}
+
+/* Gaya saat item disembunyikan */
+.karya-item[style="display: none;"] {
+  display: none !important;
+}

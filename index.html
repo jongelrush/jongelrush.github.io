@@ -73,7 +73,73 @@
             </div>
       </div>
     <!-- /about -->  
-     
+     <!--fitur filter-->
+<!-- Filter Dropdown -->
+<div class="filter-container text-center my-4">
+  <label for="kategoriFilter">Pilih Kategori:</label>
+  <select id="kategoriFilter" class="form-select w-auto d-inline-block">
+    <option value="">Semua</option>
+    <option value="my-project">My Project</option>
+    <option value="certificate">Certificate</option>
+  </select>
+</div>
+
+<!-- Filterable Items -->
+<div class="container" id="karyaList">
+  <div class="row">
+    <div class="col-md-6 col-lg-4 karya-item" data-category="my-project">
+      <h4 class="karya-title">Login Page</h4>
+      <img src="img/project/project1.png" class="img-fluid" alt="Login Page">
+    </div>
+    <div class="col-md-6 col-lg-4 karya-item" data-category="my-project">
+      <h4 class="karya-title">Dashboard</h4>
+      <img src="img/project/project2.png" class="img-fluid" alt="Dashboard">
+    </div>
+    <div class="col-md-6 col-lg-4 karya-item" data-category="certificate">
+      <h4 class="karya-title">HTML Certificate</h4>
+      <img src="img/certificate2.jpg" class="img-fluid" alt="HTML Certificate">
+    </div>
+    <div class="col-md-6 col-lg-4 karya-item" data-category="certificate">
+      <h4 class="karya-title">CSS Certificate</h4>
+      <img src="img/certificatte1.jpg" class="img-fluid" alt="CSS Certificate">
+    </div>
+       <div class="col-md-6 col-lg-4 karya-item" data-category="certificate">
+      <h4 class="karya-title">WEB Certificatte</h4>
+      <img src="img/certificate3.jpg" class="img-fluid" alt="CSS Certificate">
+    </div>
+       <div class="col-md-6 col-lg-4 karya-item" data-category="certificate">
+      <h4 class="karya-title">JS Certificatte</h4>
+      <img src="img/certificate4.jpg" class="img-fluid" alt="CSS Certificate">
+    </div>
+           <div class="col-md-6 col-lg-4 karya-item" data-category="certificate">
+      <h4 class="karya-title">JS Intermediate</h4>
+      <img src="img/certificate5.jpg" class="img-fluid" alt="CSS Certificate">
+    </div>
+           <div class="col-md-6 col-lg-4 karya-item" data-category="certificate">
+      <h4 class="karya-title">Diciding Certificate</h4>
+      <img src="img/certificatte6.png" class="img-fluid" alt="CSS Certificate">
+    </div>
+        <div class="col-md-6 col-lg-4 karya-item" data-category="my-project">
+      <h4 class="karya-title">Kalkulator</h4>
+      <img src="img/project/project3.png" class="img-fluid" alt="Login Page">
+    </div>
+        <div class="col-md-6 col-lg-4 karya-item" data-category="my-project">
+      <h4 class="karya-title">Snake Game</h4>
+      <img src="img/project/project4.png" class="img-fluid" alt="Login Page">
+    </div>
+        <div class="col-md-6 col-lg-4 karya-item" data-category="my-project">
+      <h4 class="karya-title">UI Toko Online</h4>
+      <img src="img/project/project5.png" class="img-fluid" alt="Login Page">
+    </div>
+        <div class="col-md-6 col-lg-4 karya-item" data-category="my-project">
+      <h4 class="karya-title">Data Penjualan</h4>
+      <img src="img/project/project6.png" class="img-fluid" alt="Login Page">
+    </div>
+  </div>
+</div>
+
+
+<!--/fitur filter-->
     <!-- project -->
 <section id="my-project">
 <div class="container">
@@ -222,6 +288,14 @@
     </div>
   </div>
 </section>
+  <div class="map-container">
+    <iframe 
+      src="https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d3965.373775600898!2d106.68896592366512!3d-6.345619543644199!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1sunpam%20viktor!5e0!3m2!1sid!2sid!4v1736145626278!5m2!1sid!2sid" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+      allowfullscreen="" 
+      loading="lazy" 
+      referrerpolicy="no-referrer-when-downgrade">
+    </iframe>
+  </div>
      <!-- /contact -->
 
       <!-- footer -->
@@ -253,6 +327,29 @@ gsap.from('.display-4', { duration: 1, x: -50, opacity: 0, delay: 0.5, ease: 'ba
 		speed: 1000,
     glare: true,
 	});
+
   </script>
+  <script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const kategoriFilter = document.getElementById("kategoriFilter");
+    const karyaItems = document.querySelectorAll(".karya-item");
+
+    kategoriFilter.addEventListener("change", function () {
+      const selectedCategory = kategoriFilter.value;
+
+      karyaItems.forEach(item => {
+        const itemCategory = item.getAttribute("data-category");
+
+        // Tampilkan semua elemen jika kategori tidak dipilih
+        if (!selectedCategory || selectedCategory === itemCategory) {
+          item.style.display = "block";
+        } else {
+          item.style.display = "none";
+        }
+      });
+    });
+  });
+</script>
+
     </body>
 </html>
